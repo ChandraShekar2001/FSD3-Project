@@ -11,8 +11,8 @@
 
 .featuredProducts{
     /* border: 1px solid black; */
-    height: 720px;
-    width: 1080px;
+    height: 60%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
     align-items:center;

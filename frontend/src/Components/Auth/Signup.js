@@ -144,6 +144,20 @@ const Signup = () => {
           value={user.confirmpassword}
         ></input>
       </div>
+      <div className="inputField">
+        <span>
+        <BsFillKeyFill/>
+        </span>
+        <input
+        name="confirmpassword"
+          // className="passwordDiv"
+          placeholder="Confirm Password"
+          // onChange={onChangeHandler}
+          // style={{ marginTop: "5%" }}
+          type="file"
+          // value={user.confirmpassword}
+        ></input>
+      </div>
       <button
         className="signupButton"
         onClick={onSubmitHandler}
