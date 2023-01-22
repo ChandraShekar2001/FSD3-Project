@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+.navMainDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 10%;
+  position: fixed;
+  top:0;
+  z-index: 100;
+  width: 100%;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  background-color: #fff;
+}
+
+.nSymbol {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 40px;
+  width: 16%;
+}
+
+.nSymbolImage {
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.nName {
+  font-family: "Poppins", sans-serif;
+  font-size: 150%;
+  font-weight: 700;
+}
+
+.nProducts {
+  font-size: 90%;
+  font-weight: 400;
+  text-align: center;
+}
+
+.nProducts:hover{
+  color: rgb(158, 157, 157);
+  cursor: pointer;
+}
+
+form .nosubmit {
+  
+  padding: 0;
+  border-radius: 10%;
+  border:none;
+}
+
+.nosubmit {
+  width: 260px;
+  margin-left: 10px;
+  margin-bottom: 1px;
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
+}
+
+.navLogin {
+        padding-top: 10%;
+        padding-bottom: 10%;
+  align-items: center;
+  justify-content: center;
+  background-color: #c0bfbf;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Poppins", sans-serif;
+  background-clip: padding-box;
+  font-size: 82%;
+  font-weight: 400;
+  justify-content: center;
+}
+.navLogin:hover {
+  background-color: #d7d6d6;
+  color: #000;
+  border: 1px solid #d7d6d6;
+}
+
+.navLogin:active {
+  background-color: #d7d6d6;
+  color: black;
+}
+
+.navSignup {
+    padding-top: 12%;
+    padding-bottom: 12%;
+  align-items: center;
+  background-color: #008000;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "Poppins", sans-serif;
+  background-clip: padding-box;
+  font-size: 78%;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 0rem;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+}
+
+.navSignup:hover {
+  background-color: #02c002;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  border: 1px solid #02c002;
+  color: white;
+}
+
+.navSignup:active {
+  background-color: #02c002;
+  color:white
+}
