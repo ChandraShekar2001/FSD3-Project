@@ -7,7 +7,9 @@ import ProductCard from "../Products/ProductCard";
 import { useDispatch, useSelector } from "react-redux";
 import { productActions } from "../../Actions/Product";
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Afooter from "./Afooter.js"
+// import { Link } from "react-router-dom";
+// import Afooter from "./Afooter";
 
 const images = [
   "/images/carousel-1.jpg",
@@ -43,7 +45,7 @@ const Home = (props) => {
           <h1 className={classes.featuredProductHeading}>FEATURED PRODUCTS</h1>
           <div className={classes.line}></div>
           <div className={classes.featuredProducts}>
-            {products.map((product) => (
+            {products.map((product) => 
               // <Link
               //   key={product._id}
               //   to={`/product/${product._id}`}
@@ -56,13 +58,13 @@ const Home = (props) => {
                   id={product._id}
                 />
               // </Link>
-            ))}
+            )}
           </div>
         </div>
         <Banner />
         <br />
         <br />
-        {/* <Footer /> */}
+        {/* <Afooter /> */}
       </body>
     </>
   );

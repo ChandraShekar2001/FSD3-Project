@@ -84,7 +84,7 @@ export const logOut = () => async (dispatch) => {
       type: "logOutSuccess",
     });
   } catch (error) {
-    dispatch({ type: "logOutFailure", payload: error.response.data.message });
+    dispatch({ type: "logOutFailure", payload: error.message });
   }
 };
 
@@ -169,7 +169,7 @@ export const resetPassword = (token,passwords) => async (dispatch) => {
     console.log(error);
     dispatch({
       type:"resetPasswordFail",
-      paload:error.message
+      payload:error.message
     })
   }
 };
@@ -200,7 +200,7 @@ export const updateUser = (id, userData) => async (dispatch) => {
     console.log(data);
     dispatch({
       type: "updateUserSuccess",
-      payload: data.user,
+      payload: data,
     });
   } catch (error) {
     dispatch({

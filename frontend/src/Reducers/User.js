@@ -13,7 +13,6 @@ const initialState = {
 };
 
 export const userReducer = createReducer(initialState, {
-
   signUpRequest: (state) => {
     state.loading = true;
   },
@@ -21,7 +20,7 @@ export const userReducer = createReducer(initialState, {
     state.loading = false;
     state.user = action.payload;
     state.isAuthenticated = true;
-    state.success=true;
+    state.success = true;
   },
   signUpFailure: (state, action) => {
     state.loading = false;
@@ -30,7 +29,7 @@ export const userReducer = createReducer(initialState, {
   },
   signUpClearErrors: (state, action) => {
     state.error = null;
-    state.success=false;
+    state.success = false;
   },
 
   LoginRequest: (state) => {
@@ -45,6 +44,20 @@ export const userReducer = createReducer(initialState, {
     state.loading = false;
     state.error = action.payload;
     state.isAuthenticated = false;
+  },
+
+  logOutRequest: (state) => {
+    state.loading = true;
+  },
+  logOutSuccess: (state, action) => {
+    state.loading = false;
+    state.isAuthenticated = false;
+    state.message = "logged out successfully";
+    state.user = null;
+  },
+  logOutFailure: (state, action) => {
+    state.loading = false;
+    state.error = action.payload;
   },
 
   clearErrors: (state, action) => {
@@ -66,85 +79,92 @@ export const userReducer = createReducer(initialState, {
   },
 
   //used in updateProfile Action
-  setUserRequest:(state)=>{
-    state.loading=true;
+  setUserRequest: (state) => {
+    state.loading = true;
   },
-  setUserSuccess:(state, action)=> {
-    state.loading=false;
-    state.isAuthenticated =true;
+  setUserSuccess: (state, action) => {
+    state.loading = false;
+    state.isAuthenticated = true;
     state.users = action.payload;
   },
-  setUserFail:(state, action)=> {
-    state.loading=false;
+  setUserFail: (state, action) => {
+    state.loading = false;
     state.isAuthenticated = false;
-    state.error = action.payload
+    state.error = action.payload;
   },
-  updateUserRequest:(state)=>{
-    state.loading=true;
+  updateUserRequest: (state) => {
+    state.loading = true;
   },
-  updateUserSuccess:(state, action)=> {
-    state.loading=false;
-    state.isAuthenticated =true;
+  updateUserSuccess: (state, action) => {
+    state.loading = false;
+    state.isAuthenticated = true;
     state.users = action.payload.users;
-    state.user=action.payload.user
+    state.success = true;
   },
-  updateUserFail:(state, action)=> {
-    state.loading=false;
+  updateUserFail: (state, action) => {
+    state.loading = false;
     state.isAuthenticated = false;
-    state.error = action.payload
+    state.error = action.payload;
+  },
+  updateUserReset(state) {
+    state.success = false;
+    state.error = null;
   },
 
   //profileSlice Reducers
-  updatePasswordRequest: (state,action) => {
+  updatePasswordRequest: (state, action) => {
     state.loading = true;
+    state.isUpdated = false;
   },
-  updatePasswordSuccess: (state,action) => {
+  updatePasswordSuccess: (state, action) => {
     state.loading = false;
     state.isUpdated = true;
   },
-  updatePasswordFail: (state,action) => {
+  updatePasswordFail: (state, action) => {
     state.loading = false;
     state.error = action.payload;
   },
-  updatePasswordReset: (state,action) => {
+  updatePasswordReset: (state, action) => {
     state.isUpdated = false;
     state.error = null;
   },
 
   //forgotPassword Slice Reducer
-  forgotPasswordRequest: (state,action) => {
+  forgotPasswordRequest: (state, action) => {
     state.loading = true;
+    state.success = false;
   },
-  forgotPasswordSuccess: (state,action) => {
+  forgotPasswordSuccess: (state, action) => {
     state.loading = false;
     state.success = true;
     state.message = action.payload;
   },
-  forgotPasswordFail: (state,action) => {
+  forgotPasswordFail: (state, action) => {
     state.loading = false;
     state.error = action.payload;
   },
-  forgotPasswordReset: (state,action) => {
+  forgotPasswordReset: (state, action) => {
     state.error = null;
     state.message = null;
     state.success = false;
   },
 
   //resetPassword Slice Reducer
-  resetPasswordRequest:(state,action)=>{
-    state.loading=true;
+  resetPasswordRequest: (state, action) => {
+    state.loading = true;
+    state.success = false;
   },
-  resetPasswordSuccess:(state,action)=>{
-    state.loading=false;
-    state.user=action.payload.user
-    state.success=true;
-    state.message=action.payload.message
+  resetPasswordSuccess: (state, action) => {
+    state.loading = false;
+    state.user = action.payload.user;
+    state.success = true;
+    state.message = action.payload.message;
   },
-  resetPasswordFail:(state,action)=>{
-    state.loading=false;
-    state.error=action.payload
+  resetPasswordFail: (state, action) => {
+    state.loading = false;
+    state.error = action.payload;
   },
-  resetPasswordReset:(state,action)=>{
+  resetPasswordReset: (state, action) => {
     state.error = null;
     state.success = false;
   },
@@ -166,7 +186,7 @@ export const userReducer = createReducer(initialState, {
   },
 
   //updateUserSlice Reducer
- /* updateUserRequest(state) {
+  /* updateUserRequest(state) {
     state.loading = true;
   },
   updateUserSuccess(state, action) {
@@ -192,7 +212,7 @@ export const userReducer = createReducer(initialState, {
     state.loading = false;
     state.isDeleted = action.payload.success;
     state.message = action.payload.message;
-    state.users=action.payload.users;
+    state.users = action.payload.users;
   },
   deleteUserFail(state, action) {
     state.loading = false;

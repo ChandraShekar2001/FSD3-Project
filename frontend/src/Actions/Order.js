@@ -35,7 +35,7 @@ export const myOrders=()=>async(dispatch)=>{
         const url=  `http://localhost:4000/api/v1/orders/me`
         const {data}=await axios.get(url,config)
         console.log('myorder');
-        console.log(data);
+        console.log(data.orders);
         dispatch({
             type:"myOrderSuccess",
             payload:data.orders,
@@ -56,8 +56,6 @@ export const getAllOrders=()=>async(dispatch)=>{
         dispatch({type:"allOrdersRequest"})
         const url=`http://localhost:4000/api/v1/admin/orders`
         const {data}=await axios.get(url,config)
-        console.log("getAllorders");
-        console.log(data);
         dispatch({
             type:"allOrdersSuccess",
             payload:data.orders
@@ -118,6 +116,7 @@ export const getOrderDetails=(id)=>async(dispatch)=>{
             payload:data.order
         })
     }catch(error){
+        console.log(error);
         dispatch({
             type:"getOrderFail",
             payload:error.message

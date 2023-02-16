@@ -30,7 +30,7 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
   // req.body.images = imagesLinks;
   req.body.user = req.user.id;
   const data = req.body.productData;
-  console.log(req.body.productData);
+  // console.log(req.body.productData);
   const product = await Product.create({
     name: data.name,
     description: data.description,
@@ -40,7 +40,7 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
     user: req.user
   });
   const products = await Product.find();
-  console.log(products);
+  // console.log(products);
   res.status(201).json({
     success: true,
     products,
@@ -55,7 +55,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
   const apiFeature = new ApiFeatures(Product.find(), req.query)
     .search()
     .filter();
-  console.log(apiFeature);
+  // console.log(apiFeature);
   let products = await apiFeature.query;
   // console.log(products);
 

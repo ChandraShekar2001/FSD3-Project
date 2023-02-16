@@ -125,6 +125,7 @@ export const updateProduct=(id,productData)=>async(dispatch)=>{
       payload:data.allProducts
   })
   }catch(error){
+    console.log(error);
     dispatch({
       type:"updateProductFail",
       payload:error.message

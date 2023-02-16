@@ -1,0 +1,92 @@
+*{
+    background-color: #fff;
+}
+
+.card{
+    position: relative;
+    box-shadow: none;
+    /* padding: 1rem; */
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+.card:hover{
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.rating-card{
+    position:absolute;
+    top:52%;
+    left:15%;
+    display: flex;
+    align-content: center;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius:5%;
+    width:3.8rem;
+    height: 1.3rem;
+    font-size: 0.6rem;
+}
+
+.rating-card div{
+    margin-top: 0.2rem;
+    margin-left: 0.2rem;
+    font-weight: 600;
+    background: rgba(241, 243, 245,0);
+}
+
+.rating-card p{
+    background: rgba(241, 243, 245,0);
+}
+
+.card-body{
+    padding-top: 0.8rem;
+    padding-left:0.5rem;
+    padding-bottom:2px;
+    padding-right:0.5rem;
+}
+.card-body h5{
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* .card-body p{
+    margin-top:-0.5rem;
+    font-size: 0.8rem;
+    color:grey;
+} */
+
+.addToCartBtn{
+    width: 100%;
+    height: 2rem;
+    margin-top: -0.3rem;
+    margin-bottom:0.5rem;
+    border:1px solid rgb(188, 188, 188);
+    font-size: 0.8rem;
+    padding: 0.3rem;
+    align-content: center;
+    border-radius: 3px;
+}
+
+.addToCartBtn:hover{
+    border: 1px solid black;
+}
+
+.card-body h6{
+    /* margin-top: -0.3rem; */
+    font-size:0.8rem;
+    font-weight:600;
+}
+
+.card-body h6 span{
+    text-decoration: line-through;
+    font-size:0.6rem;
+    color: gray;
+    font-weight: 300px;
+}
+
+.card-body h6 .offerPercent{
+    text-decoration: none;
+    color:rgb(252, 136, 136);
+    font-weight:200px;
+}
+

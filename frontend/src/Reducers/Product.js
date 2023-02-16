@@ -76,6 +76,7 @@ export const ProductReducers=createReducer(initialState,{
     newProductRequestSuccess(state, action) {
         state.loading = false;
         state.isCreated = true;
+        state.success=true;
         state.products = action.payload
     },
     newProductRequestFail(state, action) {
@@ -84,6 +85,7 @@ export const ProductReducers=createReducer(initialState,{
     },
     newProductRequestReset(state) {
         state.error = null;
+        state.success=false;
     },
 
     //deleteProductSlice Reducers
@@ -163,6 +165,7 @@ export const ProductReducers=createReducer(initialState,{
         state.loading = false;
         // state.isUpdated = action.payload;
         state.products=action.payload
+        state.success=true;
       },
       updateProductFail(state, action) {
         state.loading = false;
@@ -171,5 +174,6 @@ export const ProductReducers=createReducer(initialState,{
       updateProductReset(state) {
         state.isUpdated = false;
         state.error = null;
+        state.success=false;
       },
 })
